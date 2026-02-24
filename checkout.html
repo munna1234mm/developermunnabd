@@ -48,36 +48,38 @@
         class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark/95 backdrop-blur-sm px-6 lg:px-20 py-3">
         <div class="max-w-7xl mx-auto flex items-center justify-between gap-8">
             <div class="flex items-center gap-8 shrink-0">
-                <div class="flex items-center gap-2 text-primary">
+                <a href="index.html" class="flex items-center gap-2 text-primary">
                     <span class="material-symbols-outlined text-3xl font-bold">shopping_bag</span>
                     <h1 class="text-xl font-black tracking-tight uppercase">Daraz</h1>
-                </div>
-                <div class="hidden md:flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-1.5 w-80">
+                </a>
+                <form action="search.html" method="GET"
+                    class="hidden md:flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-1.5 w-80">
                     <span class="material-symbols-outlined text-slate-500 text-sm">search</span>
-                    <input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-slate-500"
+                    <input name="q"
+                        class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-slate-500"
                         placeholder="Search in Daraz" type="text" />
-                </div>
+                </form>
             </div>
             <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
+                <a class="hover:text-primary transition-colors" href="index.html">Home</a>
                 <a class="hover:text-primary transition-colors" href="#">Flash Sale</a>
-                <a class="hover:text-primary transition-colors" href="#">Global Collection</a>
-                <a class="hover:text-primary transition-colors" href="#">Daraz Mart</a>
+                <a class="hover:text-primary transition-colors" href="#">Customer Care</a>
             </nav>
             <div class="flex items-center gap-4">
-                <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full relative">
+                <button class="login-btn hidden text-sm font-bold hover:text-primary">Login</button>
+                <button class="signup-btn hidden text-sm font-bold hover:text-primary">Sign Up</button>
+                <button class="signout-btn hidden text-sm font-bold hover:text-primary">Sign Out</button>
+                <a href="cart.html" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg relative block">
                     <span class="material-symbols-outlined">shopping_cart</span>
                     <span
                         class="absolute top-1 right-1 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
-                </button>
-                <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full">
-                    <span class="material-symbols-outlined">notifications</span>
-                </button>
-                <div
-                    class="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border border-primary/30">
-                    <img alt="User profile" class="w-full h-full object-cover"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV1y9ZVsWPIkx-5v7Urn62Sv2wE0P5cT9R9aboexlXacjXiPLJR-w-Ry4aWtsaXD-UtL9Z4FMmgzAJ2giNGqTggWkW-_QFAjGFWEual3S3EsObXf7upunO6ZhQ3tCHvqYnygF2-c6tfCljXwK4oVejxEf6qJ4p_QGjKHOm9r0YYmWLARWr086SK2wfIyiF-InbeCU8KoXVA-zgubHESxs1jic4epeehLfp4fF5ITyiGchUnUHkJqjeOuQ9r7o2607IhPKTuLJEhi8" />
-                </div>
+                </a>
+                <a href="dashboard.html"
+                    class="user-profile hidden h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border border-primary/30">
+                    <img class="w-full h-full object-cover" src="" alt="Profile">
+                </a>
             </div>
+
         </div>
     </header>
     <main class="max-w-7xl mx-auto px-6 lg:px-20 py-8">
@@ -325,12 +327,13 @@
                             <button
                                 class="absolute right-1 top-1 bottom-1 px-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs font-bold rounded-md hover:bg-slate-800 transition-colors">Apply</button>
                         </div>
-                        <button
+                        <a href="confirmation.html"
                             class="w-full bg-primary hover:bg-primary/90 text-white font-black py-4 rounded-xl shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 group">
                             PLACE ORDER
                             <span
                                 class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </button>
+                        </a>
+
                     </div>
                     <div
                         class="mt-8 flex flex-wrap justify-center gap-4 border-t border-slate-100 dark:border-slate-800 pt-6">

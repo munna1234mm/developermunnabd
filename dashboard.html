@@ -50,39 +50,44 @@
             <div class="flex items-center justify-between h-16">
                 <!-- Logo & Search -->
                 <div class="flex items-center gap-8 flex-1">
-                    <div class="flex items-center gap-2 text-primary">
+                    <a href="index.html" class="flex items-center gap-2 text-primary">
                         <span class="material-symbols-outlined text-3xl font-bold">shopping_bag</span>
                         <h1 class="text-2xl font-black tracking-tight text-slate-900 dark:text-white">Daraz</h1>
-                    </div>
+                    </a>
                     <div class="hidden md:flex flex-1 max-w-md">
-                        <label class="relative w-full">
+                        <form action="search.html" method="GET" class="relative w-full">
                             <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
                                 <span class="material-symbols-outlined">search</span>
                             </span>
-                            <input
+                            <input name="q"
                                 class="block w-full pl-10 pr-3 py-2 border-none bg-slate-100 dark:bg-slate-800 rounded-lg focus:ring-2 focus:ring-primary text-sm"
                                 placeholder="Search in Daraz" type="text" />
-                        </label>
+                        </form>
                     </div>
                 </div>
                 <!-- Right Nav Links -->
                 <nav class="flex items-center gap-6">
                     <div
                         class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
-                        <a class="hover:text-primary" href="#">Home</a>
+                        <a class="hover:text-primary" href="index.html">Home</a>
                         <a class="hover:text-primary" href="#">Help Center</a>
                         <a class="hover:text-primary" href="#">Sell on Daraz</a>
                     </div>
                     <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
                     <button
-                        class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-colors">
-                        Sign Out
-                    </button>
-                    <div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border-2 border-primary/20">
-                        <img class="w-full h-full object-cover" data-alt="User profile avatar of John Doe"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPriRe-4RvPwEecE0mFhqX9yGLeAiKVx4PTngPW5nGz0zCzxLmlCQCL7lZxaUhkXaurN5JGDXoWHz0oWyS6BW60qif8lNbBHMNiY1d7XLbs9OEKGfaewL9jK7HhSGB-FTzd2KL3nJrxqShLcJzOCVMs1QQG8Z8uH66CKDDEJFLZrbyHILUox7HTuH1U2r66kYPCQCUXvbHZFGIUPuBED83ZxK34wgLYNiYVo_OpoCF3f2xiw30g9kns_wPk8__62ulk8BbQwTk0mM" />
+                        class="login-btn hidden bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-colors">Login</button>
+                    <button
+                        class="signup-btn hidden bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-colors">Sign
+                        Up</button>
+                    <button
+                        class="signout-btn bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-colors">Sign
+                        Out</button>
+                    <div
+                        class="user-profile w-10 h-10 rounded-full bg-slate-200 overflow-hidden border-2 border-primary/20">
+                        <img class="w-full h-full object-cover" src="" />
                     </div>
                 </nav>
+
             </div>
         </div>
     </header>

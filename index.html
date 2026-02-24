@@ -37,47 +37,59 @@
             class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white dark:bg-slate-900 px-4 lg:px-20 py-3 shadow-sm">
             <div class="mx-auto flex max-w-[1440px] items-center justify-between gap-8">
                 <div class="flex items-center gap-8 flex-1">
-                    <div class="flex items-center gap-2 text-primary">
+                    <a href="index.html" class="flex items-center gap-2 text-primary">
                         <span class="material-symbols-outlined text-4xl"
                             style="font-variation-settings: 'FILL' 1">shopping_bag</span>
                         <h2 class="text-2xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">
-                            MarketHub</h2>
-                    </div>
+                            Daraz</h2>
+                    </a>
                     <div class="hidden lg:flex flex-1 max-w-2xl">
-                        <div class="flex w-full items-stretch rounded-lg h-11 bg-slate-100 dark:bg-slate-800">
+                        <form action="search.html" method="GET"
+                            class="flex w-full items-stretch rounded-lg h-11 bg-slate-100 dark:bg-slate-800">
                             <div class="flex items-center justify-center pl-4 text-slate-500">
                                 <span class="material-symbols-outlined">search</span>
                             </div>
-                            <input
+                            <input name="q"
                                 class="w-full border-none bg-transparent px-4 text-base focus:ring-0 placeholder:text-slate-400"
-                                placeholder="Search in MarketHub" type="text" />
-                            <button
+                                placeholder="Search in Daraz" type="text" />
+                            <button type="submit"
                                 class="bg-primary px-6 rounded-r-lg text-white font-bold hover:bg-primary/90 transition-colors">
                                 Search
                             </button>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 <div class="flex items-center gap-6">
-                    <div class="hidden xl:flex items-center gap-6 text-sm font-semibold">
+                    <div
+                        class="hidden xl:flex items-center gap-6 text-sm font-semibold text-slate-600 dark:text-slate-400">
                         <a class="hover:text-primary" href="#">Become a Seller</a>
                         <a class="hover:text-primary" href="#">Customer Care</a>
                         <a class="hover:text-primary" href="#">Track Order</a>
                     </div>
                     <div class="flex items-center gap-4">
-                        <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg relative">
+                        <a href="cart.html"
+                            class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg relative block">
                             <span class="material-symbols-outlined">shopping_cart</span>
                             <span
                                 class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
-                        </button>
-                        <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
-                            <span class="material-symbols-outlined">person</span>
-                        </button>
+                        </a>
+                        <a href="dashboard.html"
+                            class="user-profile p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg hidden">
+                            <img class="w-8 h-8 rounded-full object-cover border border-primary/20" src=""
+                                alt="Profile">
+                        </a>
                         <div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-700 mx-1"></div>
                         <button
-                            class="hidden md:block bg-primary text-white px-5 py-2 rounded-lg font-bold text-sm hover:opacity-90">Login</button>
+                            class="login-btn hidden md:block bg-primary text-white px-5 py-2 rounded-lg font-bold text-sm hover:opacity-90">Login</button>
+                        <button
+                            class="signup-btn hidden md:block border border-primary text-primary px-5 py-2 rounded-lg font-bold text-sm hover:bg-primary/5">Sign
+                            Up</button>
+                        <button
+                            class="signout-btn hidden md:block bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-5 py-2 rounded-lg font-bold text-sm hover:bg-slate-200">Sign
+                            Out</button>
                     </div>
                 </div>
+
             </div>
         </header>
         <main class="mx-auto w-full max-w-[1440px] px-4 lg:px-20 py-6">

@@ -41,19 +41,19 @@
         <div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between gap-8">
             <!-- Logo & Search -->
             <div class="flex items-center gap-8 flex-1">
-                <div class="flex items-center gap-2 text-primary">
+                <a href="index.html" class="flex items-center gap-2 text-primary">
                     <span class="material-symbols-outlined text-3xl font-bold">shopping_bag</span>
                     <h1 class="text-2xl font-bold tracking-tight">Daraz</h1>
-                </div>
+                </a>
                 <div class="flex-1 max-w-2xl relative">
-                    <div
+                    <form action="search.html" method="GET"
                         class="flex w-full items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-4 py-2 border border-transparent focus-within:border-primary transition-colors">
                         <span class="material-symbols-outlined text-slate-500 mr-2">search</span>
-                        <input class="bg-transparent border-none focus:ring-0 w-full text-sm"
+                        <input name="q" class="bg-transparent border-none focus:ring-0 w-full text-sm"
                             placeholder="Search in Daraz" type="text" value="Laptops" />
-                        <button
+                        <button type="submit"
                             class="bg-primary text-white px-4 py-1 rounded-md text-sm font-semibold hover:bg-opacity-90 transition-all">Search</button>
-                    </div>
+                    </form>
                 </div>
             </div>
             <!-- Nav Links & Actions -->
@@ -66,17 +66,22 @@
                 </nav>
                 <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
                 <div class="flex items-center gap-4">
-                    <button class="text-sm font-bold hover:text-primary">Login</button>
+                    <button class="login-btn text-sm font-bold hover:text-primary">Login</button>
                     <button
-                        class="bg-slate-200 dark:bg-slate-800 text-sm font-bold px-4 py-2 rounded-lg hover:bg-slate-300 transition-colors">Sign
+                        class="signup-btn bg-slate-200 dark:bg-slate-800 text-sm font-bold px-4 py-2 rounded-lg hover:bg-slate-300 transition-colors">Sign
                         Up</button>
-                    <div class="relative cursor-pointer">
+                    <button class="signout-btn hidden text-sm font-bold hover:text-primary">Sign Out</button>
+                    <a href="dashboard.html" class="user-profile hidden">
+                        <img class="w-8 h-8 rounded-full border border-primary/20" src="" alt="Profile">
+                    </a>
+                    <a href="cart.html" class="relative cursor-pointer block">
                         <span class="material-symbols-outlined text-2xl">shopping_cart</span>
                         <span
                             class="absolute -top-2 -right-2 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
-                    </div>
+                    </a>
                 </div>
             </div>
+
         </div>
     </header>
     <main class="max-w-[1440px] mx-auto px-6 py-6">

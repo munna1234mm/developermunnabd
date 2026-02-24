@@ -36,40 +36,44 @@
         class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 px-4 md:px-20 lg:px-40 py-3">
         <div class="max-w-[1280px] mx-auto flex items-center justify-between gap-8">
             <div class="flex items-center gap-8 flex-1">
-                <div class="flex items-center gap-2 text-primary">
+                <a href="index.html" class="flex items-center gap-2 text-primary">
                     <span class="material-symbols-outlined text-3xl">shopping_bag</span>
                     <h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">
-                        MarketHub</h2>
-                </div>
+                        Daraz</h2>
+                </a>
                 <div class="hidden md:flex flex-1 max-w-xl">
-                    <div class="flex w-full items-stretch rounded-lg bg-slate-100 dark:bg-slate-800">
+                    <form action="search.html" method="GET"
+                        class="flex w-full items-stretch rounded-lg bg-slate-100 dark:bg-slate-800 overflow-hidden">
                         <div class="flex items-center justify-center pl-4 text-slate-500">
                             <span class="material-symbols-outlined">search</span>
                         </div>
-                        <input
+                        <input name="q"
                             class="w-full bg-transparent border-none focus:ring-0 text-sm py-2 px-3 placeholder:text-slate-500"
-                            placeholder="Search in MarketHub" type="text" />
-                        <button class="bg-primary text-white px-6 rounded-r-lg font-bold text-sm">Search</button>
-                    </div>
+                            placeholder="Search in Daraz" type="text" />
+                        <button type="submit" class="bg-primary text-white px-6 font-bold text-sm">Search</button>
+                    </form>
                 </div>
             </div>
             <div class="flex items-center gap-6">
                 <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
-                    <a class="hover:text-primary transition-colors" href="#">Categories</a>
-                    <a class="hover:text-primary transition-colors" href="#">Offers</a>
-                    <a class="hover:text-primary transition-colors" href="#">Help</a>
+                    <button class="login-btn hover:text-primary">Login</button>
+                    <button class="signup-btn hover:text-primary">Sign Up</button>
+                    <button class="signout-btn hidden hover:text-primary">Sign Out</button>
                 </div>
                 <div class="flex items-center gap-4">
-                    <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg relative">
+                    <a href="cart.html"
+                        class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg relative block">
                         <span class="material-symbols-outlined">shopping_cart</span>
                         <span
                             class="absolute top-1 right-1 bg-primary text-white text-[10px] font-bold px-1 rounded-full">3</span>
-                    </button>
-                    <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
-                        <span class="material-symbols-outlined">person</span>
-                    </button>
+                    </a>
+                    <a href="dashboard.html"
+                        class="user-profile hidden p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+                        <img class="w-8 h-8 rounded-full border border-primary/20" src="" alt="Profile">
+                    </a>
                 </div>
             </div>
+
         </div>
     </header>
     <main class="max-w-[1280px] mx-auto px-4 md:px-10 lg:px-40 py-6">
