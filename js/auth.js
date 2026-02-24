@@ -21,14 +21,16 @@ function signOut() {
 }
 
 function updateUI(user) {
-    const loginButtons = document.querySelectorAll('.login-btn, button:contains("Login")');
-    const signupButtons = document.querySelectorAll('.signup-btn, button:contains("Sign Up")');
+    const loginButtons = [...document.querySelectorAll('.login-btn'), ...findButtonsByText('Login')];
+    const signupButtons = [...document.querySelectorAll('.signup-btn'), ...findButtonsByText('Sign Up')];
+    const signoutButtons = [...document.querySelectorAll('.signout-btn'), ...findButtonsByText('Sign Out')];
     const userProfiles = document.querySelectorAll('.user-profile');
 
     if (user) {
         // User is signed in
         loginButtons.forEach(btn => btn.style.display = 'none');
         signupButtons.forEach(btn => btn.style.display = 'none');
+        signoutButtons.forEach(btn => btn.style.display = 'flex');
         userProfiles.forEach(profile => {
             profile.style.display = 'flex';
             const img = profile.querySelector('img');
@@ -38,9 +40,11 @@ function updateUI(user) {
         // User is signed out
         loginButtons.forEach(btn => btn.style.display = 'flex');
         signupButtons.forEach(btn => btn.style.display = 'flex');
+        signoutButtons.forEach(btn => btn.style.display = 'none');
         userProfiles.forEach(profile => profile.style.display = 'none');
     }
 }
+
 
 // Custom selector for text content since :contains is not native
 function findButtonsByText(text) {
