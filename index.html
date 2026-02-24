@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Marketplace Home Page</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -26,23 +29,30 @@
         }
     </script>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
     <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
         <!-- Header / TopNavBar -->
-        <header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white dark:bg-slate-900 px-4 lg:px-20 py-3 shadow-sm">
+        <header
+            class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white dark:bg-slate-900 px-4 lg:px-20 py-3 shadow-sm">
             <div class="mx-auto flex max-w-[1440px] items-center justify-between gap-8">
                 <div class="flex items-center gap-8 flex-1">
                     <div class="flex items-center gap-2 text-primary">
-                        <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1">shopping_bag</span>
-                        <h2 class="text-2xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">MarketHub</h2>
+                        <span class="material-symbols-outlined text-4xl"
+                            style="font-variation-settings: 'FILL' 1">shopping_bag</span>
+                        <h2 class="text-2xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">
+                            MarketHub</h2>
                     </div>
                     <div class="hidden lg:flex flex-1 max-w-2xl">
                         <div class="flex w-full items-stretch rounded-lg h-11 bg-slate-100 dark:bg-slate-800">
                             <div class="flex items-center justify-center pl-4 text-slate-500">
                                 <span class="material-symbols-outlined">search</span>
                             </div>
-                            <input class="w-full border-none bg-transparent px-4 text-base focus:ring-0 placeholder:text-slate-400" placeholder="Search in MarketHub" type="text" />
-                            <button class="bg-primary px-6 rounded-r-lg text-white font-bold hover:bg-primary/90 transition-colors">
+                            <input
+                                class="w-full border-none bg-transparent px-4 text-base focus:ring-0 placeholder:text-slate-400"
+                                placeholder="Search in MarketHub" type="text" />
+                            <button
+                                class="bg-primary px-6 rounded-r-lg text-white font-bold hover:bg-primary/90 transition-colors">
                                 Search
                             </button>
                         </div>
@@ -57,13 +67,15 @@
                     <div class="flex items-center gap-4">
                         <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg relative">
                             <span class="material-symbols-outlined">shopping_cart</span>
-                            <span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
+                            <span
+                                class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
                         </button>
                         <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
                             <span class="material-symbols-outlined">person</span>
                         </button>
                         <div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-700 mx-1"></div>
-                        <button class="hidden md:block bg-primary text-white px-5 py-2 rounded-lg font-bold text-sm hover:opacity-90">Login</button>
+                        <button
+                            class="hidden md:block bg-primary text-white px-5 py-2 rounded-lg font-bold text-sm hover:opacity-90">Login</button>
                     </div>
                 </div>
             </div>
@@ -72,63 +84,80 @@
             <!-- Hero Section with Sidebar -->
             <div class="flex flex-col lg:flex-row gap-6 mb-10">
                 <!-- Sidebar Categories -->
-                <aside class="hidden lg:flex flex-col w-64 shrink-0 bg-white dark:bg-slate-900 rounded-xl shadow-sm overflow-hidden border border-slate-100 dark:border-slate-800">
+                <aside
+                    class="hidden lg:flex flex-col w-64 shrink-0 bg-white dark:bg-slate-900 rounded-xl shadow-sm overflow-hidden border border-slate-100 dark:border-slate-800">
                     <div class="p-4 border-b border-slate-50 dark:border-slate-800 bg-slate-50/50">
                         <h3 class="font-bold text-sm uppercase tracking-wider text-slate-500">Categories</h3>
                     </div>
                     <nav class="flex flex-col py-2">
-                        <a class="flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 hover:text-primary transition-colors group" href="#">
+                        <a class="flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 hover:text-primary transition-colors group"
+                            href="#">
                             <div class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">checkroom</span>
+                                <span
+                                    class="material-symbols-outlined text-slate-400 group-hover:text-primary">checkroom</span>
                                 <span class="text-sm font-medium">Fashion</span>
                             </div>
                             <span class="material-symbols-outlined text-sm">chevron_right</span>
                         </a>
-                        <a class="flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 hover:text-primary transition-colors group" href="#">
+                        <a class="flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 hover:text-primary transition-colors group"
+                            href="#">
                             <div class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">devices</span>
+                                <span
+                                    class="material-symbols-outlined text-slate-400 group-hover:text-primary">devices</span>
                                 <span class="text-sm font-medium">Electronics</span>
                             </div>
                             <span class="material-symbols-outlined text-sm">chevron_right</span>
                         </a>
-                        <a class="flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 hover:text-primary transition-colors group" href="#">
+                        <a class="flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 hover:text-primary transition-colors group"
+                            href="#">
                             <div class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">home_iot_device</span>
+                                <span
+                                    class="material-symbols-outlined text-slate-400 group-hover:text-primary">home_iot_device</span>
                                 <span class="text-sm font-medium">Home &amp; Living</span>
                             </div>
                             <span class="material-symbols-outlined text-sm">chevron_right</span>
                         </a>
-                        <a class="flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 hover:text-primary transition-colors group" href="#">
+                        <a class="flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 hover:text-primary transition-colors group"
+                            href="#">
                             <div class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">face_6</span>
+                                <span
+                                    class="material-symbols-outlined text-slate-400 group-hover:text-primary">face_6</span>
                                 <span class="text-sm font-medium">Beauty &amp; Health</span>
                             </div>
                             <span class="material-symbols-outlined text-sm">chevron_right</span>
                         </a>
-                        <a class="flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 hover:text-primary transition-colors group" href="#">
+                        <a class="flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 hover:text-primary transition-colors group"
+                            href="#">
                             <div class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">sports_esports</span>
+                                <span
+                                    class="material-symbols-outlined text-slate-400 group-hover:text-primary">sports_esports</span>
                                 <span class="text-sm font-medium">Sports &amp; Toys</span>
                             </div>
                             <span class="material-symbols-outlined text-sm">chevron_right</span>
                         </a>
-                        <a class="flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 hover:text-primary transition-colors group" href="#">
+                        <a class="flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 hover:text-primary transition-colors group"
+                            href="#">
                             <div class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">kitchen</span>
+                                <span
+                                    class="material-symbols-outlined text-slate-400 group-hover:text-primary">kitchen</span>
                                 <span class="text-sm font-medium">Groceries</span>
                             </div>
                             <span class="material-symbols-outlined text-sm">chevron_right</span>
                         </a>
-                        <a class="flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 hover:text-primary transition-colors group" href="#">
+                        <a class="flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 hover:text-primary transition-colors group"
+                            href="#">
                             <div class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">pets</span>
+                                <span
+                                    class="material-symbols-outlined text-slate-400 group-hover:text-primary">pets</span>
                                 <span class="text-sm font-medium">Pet Supplies</span>
                             </div>
                             <span class="material-symbols-outlined text-sm">chevron_right</span>
                         </a>
-                        <a class="flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 hover:text-primary transition-colors group" href="#">
+                        <a class="flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 hover:text-primary transition-colors group"
+                            href="#">
                             <div class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">more_horiz</span>
+                                <span
+                                    class="material-symbols-outlined text-slate-400 group-hover:text-primary">more_horiz</span>
                                 <span class="text-sm font-medium">Others</span>
                             </div>
                         </a>
@@ -136,13 +165,20 @@
                 </aside>
                 <!-- Hero Slider -->
                 <div class="flex-1 relative group overflow-hidden rounded-xl shadow-lg h-[400px]">
-                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBj_omE9uBTANeA9kjAGxgslarkpXmAc7nP3_T9msJ8NSzeuLgBhFen4ELVlP-o6IY6Di9YL6mF64oUBC8ueBNttxdRKZ0ZY3ot0tUwufbyBrAIVkjicxmBoRDdRYucSAQRzu2uQd3UPdwTjusoH2P7YPSXrq_Hr_batYoDnssgX-T-EmzG6sMrpGWsZL-GNPn0vdR7fU3WJtshUyRdwDSz8MHUiGg11_GO4o3wbXEsDERgyyigS-XBOsyF3niZS8SVhzmVtqsOWmc')"></div>
+                    <div class="absolute inset-0 bg-cover bg-center"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBj_omE9uBTANeA9kjAGxgslarkpXmAc7nP3_T9msJ8NSzeuLgBhFen4ELVlP-o6IY6Di9YL6mF64oUBC8ueBNttxdRKZ0ZY3ot0tUwufbyBrAIVkjicxmBoRDdRYucSAQRzu2uQd3UPdwTjusoH2P7YPSXrq_Hr_batYoDnssgX-T-EmzG6sMrpGWsZL-GNPn0vdR7fU3WJtshUyRdwDSz8MHUiGg11_GO4o3wbXEsDERgyyigS-XBOsyF3niZS8SVhzmVtqsOWmc')">
+                    </div>
                     <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
                     <div class="relative h-full flex flex-col justify-center px-12 text-white">
-                        <span class="bg-primary px-3 py-1 rounded-full text-xs font-bold w-fit mb-4">EXCLUSIVE OFFER</span>
-                        <h1 class="text-5xl font-black mb-4 max-w-md leading-tight">Mega Electronics <br /><span class="text-primary">70% OFF</span></h1>
-                        <p class="text-lg text-slate-200 mb-8 max-w-sm">Upgrade your tech game with the latest smartphones and gadgets at unbeatable prices.</p>
-                        <button class="bg-white text-slate-900 px-8 py-3 rounded-lg font-bold w-fit hover:bg-primary hover:text-white transition-all transform hover:scale-105">Shop Now</button>
+                        <span class="bg-primary px-3 py-1 rounded-full text-xs font-bold w-fit mb-4">EXCLUSIVE
+                            OFFER</span>
+                        <h1 class="text-5xl font-black mb-4 max-w-md leading-tight">Mega Electronics <br /><span
+                                class="text-primary">70% OFF</span></h1>
+                        <p class="text-lg text-slate-200 mb-8 max-w-sm">Upgrade your tech game with the latest
+                            smartphones and gadgets at unbeatable prices.</p>
+                        <button
+                            class="bg-white text-slate-900 px-8 py-3 rounded-lg font-bold w-fit hover:bg-primary hover:text-white transition-all transform hover:scale-105">Shop
+                            Now</button>
                     </div>
                     <!-- Dots -->
                     <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
@@ -168,15 +204,23 @@
                             </div>
                         </div>
                     </div>
-                    <a class="text-primary font-bold flex items-center gap-1 hover:underline" href="#">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                    <a class="text-primary font-bold flex items-center gap-1 hover:underline" href="#">View All <span
+                            class="material-symbols-outlined text-sm">arrow_forward</span></a>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    <div class="bg-white dark:bg-slate-900 rounded-xl p-3 shadow-sm hover:shadow-md transition-shadow group cursor-pointer border border-transparent hover:border-primary/20">
-                        <div class="aspect-square bg-slate-100 dark:bg-slate-800 rounded-lg mb-3 relative overflow-hidden">
-                            <img alt="Watch" class="w-full h-full object-cover group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUsSOyOhyT0IxQUbjzl75rk-aq9DKi453MypNl7bR-m7l0eXS7V67Kyh1YFBIUSTm6w30MQwMZu0FMfoQkceXgTeXze2r4N4yR-p8-NvJdKbb8v7EkyzRuJyYjzP8m_w_nhbsYvrfWGeGBnrGMxx48pLlWjCHOVbXnxz103jRcAinYEXYFyrFsyoxLp-FMfjbToIlGEiaySZCHwfKH3M7IT91OqrsNtULJGHXt68IzLep7YxOK1XUZhRUbV0QvBed1uyjO4OYH5rg" />
-                            <div class="absolute top-2 left-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">-45%</div>
+                    <div
+                        class="bg-white dark:bg-slate-900 rounded-xl p-3 shadow-sm hover:shadow-md transition-shadow group cursor-pointer border border-transparent hover:border-primary/20">
+                        <div
+                            class="aspect-square bg-slate-100 dark:bg-slate-800 rounded-lg mb-3 relative overflow-hidden">
+                            <img alt="Watch"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUsSOyOhyT0IxQUbjzl75rk-aq9DKi453MypNl7bR-m7l0eXS7V67Kyh1YFBIUSTm6w30MQwMZu0FMfoQkceXgTeXze2r4N4yR-p8-NvJdKbb8v7EkyzRuJyYjzP8m_w_nhbsYvrfWGeGBnrGMxx48pLlWjCHOVbXnxz103jRcAinYEXYFyrFsyoxLp-FMfjbToIlGEiaySZCHwfKH3M7IT91OqrsNtULJGHXt68IzLep7YxOK1XUZhRUbV0QvBed1uyjO4OYH5rg" />
+                            <div
+                                class="absolute top-2 left-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
+                                -45%</div>
                         </div>
-                        <h3 class="text-sm font-medium line-clamp-2 mb-2 group-hover:text-primary transition-colors">Premium Steel Chronograph Watch</h3>
+                        <h3 class="text-sm font-medium line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                            Premium Steel Chronograph Watch</h3>
                         <div class="text-lg font-bold text-primary">$120.00</div>
                         <div class="text-xs text-slate-400 line-through mb-2">$220.00</div>
                         <div class="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
@@ -188,5 +232,14 @@
             </section>
         </main>
     </div>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+    <!-- Custom Firebase Config and Auth Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
 </body>
+
 </html>
