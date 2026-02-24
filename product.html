@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f47b25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221710",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <title>Product Detail Page</title>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+    <!-- Top Navigation Bar -->
+    <header
+        class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 px-4 md:px-20 lg:px-40 py-3">
+        <div class="max-w-[1280px] mx-auto flex items-center justify-between gap-8">
+            <div class="flex items-center gap-8 flex-1">
+                <div class="flex items-center gap-2 text-primary">
+                    <span class="material-symbols-outlined text-3xl">shopping_bag</span>
+                    <h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">
+                        MarketHub</h2>
+                </div>
+                <div class="hidden md:flex flex-1 max-w-xl">
+                    <div class="flex w-full items-stretch rounded-lg bg-slate-100 dark:bg-slate-800">
+                        <div class="flex items-center justify-center pl-4 text-slate-500">
+                            <span class="material-symbols-outlined">search</span>
+                        </div>
+                        <input
+                            class="w-full bg-transparent border-none focus:ring-0 text-sm py-2 px-3 placeholder:text-slate-500"
+                            placeholder="Search in MarketHub" type="text" />
+                        <button class="bg-primary text-white px-6 rounded-r-lg font-bold text-sm">Search</button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+                    <a class="hover:text-primary transition-colors" href="#">Categories</a>
+                    <a class="hover:text-primary transition-colors" href="#">Offers</a>
+                    <a class="hover:text-primary transition-colors" href="#">Help</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg relative">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        <span
+                            class="absolute top-1 right-1 bg-primary text-white text-[10px] font-bold px-1 rounded-full">3</span>
+                    </button>
+                    <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-[1280px] mx-auto px-4 md:px-10 lg:px-40 py-6">
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 text-sm text-slate-500 mb-6">
+            <a class="hover:text-primary" href="#">Home</a>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <a class="hover:text-primary" href="#">Electronics</a>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <a class="hover:text-primary" href="#">Smartphones</a>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <span class="text-slate-900 dark:text-slate-100 font-medium">UltraVision Pro Max 5G</span>
+        </nav>
+        <!-- Product Hero Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm">
+            <!-- Left: Product Images -->
+            <div class="lg:col-span-5 flex gap-4">
+                <div class="flex flex-col gap-3">
+                    <div class="w-16 h-16 rounded-lg border-2 border-primary overflow-hidden cursor-pointer bg-slate-100"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxZJ7yUBOqUrFophj-GLvTOCH4yS5nE94y8OOiVFdcA9oJ1S6y5jiHWkqHiYv3a3Um-1fY3DuIMqvix1KO2pgFNFxuOLyLICsu3fNdsUPq1FxGiC65NbqFMszjyFavAyHFJTWBsV-2Yne9hkB3fBLUPsVbHzIdcz-Jfy5JIOaPsGhLbfxAPjOiUtLWN8C0ZF2zeTs5N_q7WukX2IUxwJjgFKidVHIsXpx2ikqqObLMf0kh0c0tsyoD5_2vkYk2YFW63uKnPhfhqto')">
+                    </div>
+                    <div class="w-16 h-16 rounded-lg border border-slate-200 overflow-hidden cursor-pointer hover:border-primary transition-colors bg-slate-100"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAAw3b_dZpjvu1GMx3TidPWleg8SgHQuiR40FfOS2SpEFyE6LuJAgbt0vtnVwT7yLhzgsVlkY3pccAfxRM5UEgmzJ8N2dbl1Fo8yImsqEuoEczZkvy4duJZdeamRAJTOziaIoJH4Ldg0LnwsoEVHQLru49rm2jmtbJ9SBpvpdstsKNfNoPmVgdN32bkoB_2OwPOdvgPGgBIPX1Lnz5g5s4o7DO-zRhgBEVn_fj5zmh8UODkbNJ6cPMeUSq8q1kRVfKnKFXK6WKvlaM')">
+                    </div>
+                    <div class="w-16 h-16 rounded-lg border border-slate-200 overflow-hidden cursor-pointer hover:border-primary transition-colors bg-slate-100"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBek5w2WKiW1TtO9GzHxytGA_HjEYxgDlP_ivLdnyT7LO1rJjnJE7yh6pcK45ZVa_y_9ngso_xtsMGO0XDxdNCse930B7BXkXMqQLXUVj0b-ZF5_mwy5cx5A0Nq645F2Xymoa8b0hTWvAg_VSU4gBj9izScuaHEVXxIpVZbI325IJo2ZRe_86J7PgY5qIm6Qk4dgwsFNjtx-1nJkiIoR5FJTME5eAuOVL5FWYjkdYER_8cbyvz_b4uUEPIXsmIIxo9T9GRb1T7Bq50')">
+                    </div>
+                    <div class="w-16 h-16 rounded-lg border border-slate-200 overflow-hidden cursor-pointer hover:border-primary transition-colors bg-slate-100"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuArbTtJDJbgmryNPKA-O6jWXJq4rXqTxgTsS3XAxmQ9cjcpUDofb14lx96nRdsgVgpvFSS-oPLS6HGH61WEHLS_O_skBnT-Z7MIn04FaRP__KWWdAJea9Utwtv5U48OwffPCm-10JOLCCNygSTMsBv9VHH_MiilC5vlrUpyToimvkg8yfKPL3dGJraFnw4GLbaz2eus8XfDn4oxzIAK2tcpt0ja5vebAxeCc6vpXOjVkczO1rOUUyCXZXo4eqCI8RIR8a0gGEwSIwQ')">
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="aspect-square rounded-xl bg-slate-100 bg-center bg-no-repeat bg-cover"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTM-Jk5ikQ65krf9Jk6kcFngJiJ_jpBLtIbA6X1PBz_nE5mut2dFD8rYjLj4iKoPkjkaKp52MM027ML5UpnOYlZ7_gY9dxPgS2qvYM8nqPEBnIkt6RGJZ_8ycEPkw6GJSNX_4RC49ADmMNwljkRgUY0yOWYkwS2eNuatXQCJthl3hNM3bG-PMbBFOodWf92ql9eIP-q1xIeIcQ4PHDv2vtuFwpwi9yQCf-XjM3zfe5Q9e0SqaO2BuYdkllvR8Zf8eaa8eRG9X32RA')">
+                    </div>
+                </div>
+            </div>
+            <!-- Center: Product Info -->
+            <div class="lg:col-span-4 flex flex-col gap-6">
+                <div>
+                    <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2 leading-tight">UltraVision Pro
+                        Max 5G - 256GB Storage, 12GB RAM, Phantom Black</h1>
+                    <div class="flex items-center gap-4 text-sm">
+                        <div class="flex items-center text-primary">
+                            <span class="material-symbols-outlined text-lg fill-1">star</span>
+                            <span class="material-symbols-outlined text-lg fill-1">star</span>
+                            <span class="material-symbols-outlined text-lg fill-1">star</span>
+                            <span class="material-symbols-outlined text-lg fill-1">star</span>
+                            <span class="material-symbols-outlined text-lg">star_half</span>
+                            <span class="ml-1 font-bold">4.8</span>
+                        </div>
+                        <span class="text-slate-400">|</span>
+                        <a class="text-blue-500 hover:underline" href="#reviews">1,248 Ratings</a>
+                        <span class="text-slate-400">|</span>
+                        <a class="text-blue-500 hover:underline" href="#qna">85 Answered Questions</a>
+                    </div>
+                </div>
+                <div class="pb-6 border-b border-slate-100 dark:border-slate-800">
+                    <div class="flex items-baseline gap-3 mb-1">
+                        <span class="text-3xl font-bold text-primary">$899.00</span>
+                        <span class="text-slate-400 line-through text-lg">$1,199.00</span>
+                        <span class="bg-primary/10 text-primary text-sm font-bold px-2 py-0.5 rounded">-25%</span>
+                    </div>
+                    <p class="text-xs text-slate-500">Inclusive of all taxes</p>
+                </div>
+                <!-- Product Options -->
+                <div class="flex flex-col gap-4">
+                    <div>
+                        <p class="text-sm font-bold mb-3">Color Family: <span class="font-normal text-slate-500">Phantom
+                                Black</span></p>
+                        <div class="flex gap-2">
+                            <button class="w-12 h-12 rounded-lg border-2 border-primary p-0.5">
+                                <div class="w-full h-full bg-slate-900 rounded"></div>
+                            </button>
+                            <button
+                                class="w-12 h-12 rounded-lg border border-slate-200 p-0.5 hover:border-primary transition-colors">
+                                <div class="w-full h-full bg-slate-200 rounded"></div>
+                            </button>
+                            <button
+                                class="w-12 h-12 rounded-lg border border-slate-200 p-0.5 hover:border-primary transition-colors">
+                                <div class="w-full h-full bg-blue-900 rounded"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold mb-3">Storage Capacity: <span
+                                class="font-normal text-slate-500">256GB</span></p>
+                        <div class="flex gap-3">
+                            <button
+                                class="px-4 py-2 text-sm font-medium border border-slate-200 rounded-lg hover:border-primary transition-colors">128GB</button>
+                            <button
+                                class="px-4 py-2 text-sm font-medium border-2 border-primary rounded-lg">256GB</button>
+                            <button
+                                class="px-4 py-2 text-sm font-medium border border-slate-200 rounded-lg hover:border-primary transition-colors">512GB</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3 mt-4">
+                    <div class="flex gap-4">
+                        <button
+                            class="flex-1 bg-primary text-white font-bold py-3 rounded-lg hover:bg-primary/90 transition-colors">Buy
+                            Now</button>
+                        <button
+                            class="flex-1 bg-primary/20 text-primary font-bold py-3 rounded-lg hover:bg-primary/30 transition-colors">Add
+                            to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Right: Delivery Sidebar -->
+            <div class="lg:col-span-3">
+                <div
+                    class="flex flex-col gap-6 p-4 border border-slate-100 dark:border-slate-800 rounded-xl bg-slate-50 dark:bg-slate-800/50">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-sm font-bold text-slate-500 uppercase tracking-wider">Delivery</h3>
+                            <span class="material-symbols-outlined text-slate-400 cursor-pointer">info</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="material-symbols-outlined text-slate-400">location_on</span>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium">New York, Central Park</p>
+                                <button class="text-xs text-blue-500 hover:underline">Change Location</button>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 py-3 border-y border-slate-200 dark:border-slate-700">
+                            <span class="material-symbols-outlined text-slate-400">local_shipping</span>
+                            <div class="flex-1">
+                                <div class="flex justify-between">
+                                    <p class="text-sm font-medium">Standard Delivery</p>
+                                    <p class="text-sm font-bold">$12.00</p>
+                                </div>
+                                <p class="text-xs text-slate-500">3 - 5 days</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="material-symbols-outlined text-slate-400">payments</span>
+                            <p class="text-sm">Cash on Delivery Available</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-sm font-bold text-slate-500 uppercase tracking-wider">Service</h3>
+                        <div class="flex gap-3">
+                            <span class="material-symbols-outlined text-primary">verified_user</span>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium">100% Authentic</p>
+                                <p class="text-xs text-slate-500">Direct from Brand</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="material-symbols-outlined text-primary">assignment_return</span>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium">14 Days Easy Returns</p>
+                                <p class="text-xs text-slate-500">Change of mind is not applicable</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="material-symbols-outlined text-primary">shield</span>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium">1 Year Brand Warranty</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="mt-4 p-4 border border-slate-100 dark:border-slate-800 rounded-xl flex items-center justify-between">
+                    <div>
+                        <p class="text-xs text-slate-500">Sold by</p>
+                        <p class="text-sm font-bold">Official Electronics Store</p>
+                    </div>
+                    <button class="text-primary text-sm font-bold hover:underline">Chat</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product Details Tab Content -->
+        <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-9 flex flex-col gap-8">
+                <!-- Description -->
+                <section class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-sm">
+                    <h2 class="text-xl font-bold mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">Product
+                        Details of UltraVision Pro Max 5G</h2>
+                    <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 space-y-4">
+                        <p>Experience the pinnacle of mobile technology with the UltraVision Pro Max 5G. Featuring a
+                            stunning 6.9-inch Dynamic OLED display with a silky-smooth 120Hz refresh rate, every swipe
+                            and tap feels incredibly responsive.</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>Processor:</strong> Octa-core flagship chipset for lightning-fast performance
+                            </li>
+                            <li><strong>Camera:</strong> Quad-lens system with 108MP main sensor and 100x Space Zoom
+                            </li>
+                            <li><strong>Battery:</strong> 5,000mAh long-lasting battery with 65W Super Fast Charging
+                            </li>
+                            <li><strong>Display:</strong> 6.9" Quad HD+ OLED with Vision Booster</li>
+                            <li><strong>Durability:</strong> IP68 water and dust resistance, Gorilla Glass Victus+</li>
+                        </ul>
+                        <div class="mt-8">
+                            <div class="aspect-video rounded-xl bg-slate-100 bg-center bg-no-repeat bg-cover"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhSYIycXyubbvcYwLwdxT6AsBfJE4ZMkDiUwTwU3kvRk5K3ioeLD8nu3BDyqx2TyiBIiqmbae_8FFaC1NI26KeNY1T90v6dwmZ5fRyYv09Q--9pdVCIvlDJBA1UcfeDI6CANL0m8JBjrur3OeUXkVhYMiHUzlEMjO0cF5ivOERBaK5Caj7xpWgftWvfaeIWDrC1fJ3nERoy8hAA3bgzUeZ6CH9ycA1odB7mnuN9cTo856u8qmefA6UILGllFws_6IiDUbYDi3ml_I')">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Reviews Section -->
+                <section class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-sm" id="reviews">
+                    <h2 class="text-xl font-bold mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">Ratings
+                        &amp; Reviews</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-10">
+                        <div
+                            class="md:col-span-4 flex flex-col items-center justify-center border-r border-slate-100 dark:border-slate-800">
+                            <div class="text-5xl font-bold text-slate-900 dark:text-slate-100">4.8<span
+                                    class="text-xl text-slate-400">/5</span></div>
+                            <div class="flex items-center text-primary my-2">
+                                <span class="material-symbols-outlined fill-1">star</span>
+                                <span class="material-symbols-outlined fill-1">star</span>
+                                <span class="material-symbols-outlined fill-1">star</span>
+                                <span class="material-symbols-outlined fill-1">star</span>
+                                <span class="material-symbols-outlined fill-1">star</span>
+                            </div>
+                            <p class="text-sm text-slate-500">1,248 Ratings</p>
+                        </div>
+                        <div class="md:col-span-8 flex flex-col gap-2">
+                            <div class="flex items-center gap-4">
+                                <span class="text-sm w-12">5 Star</span>
+                                <div class="flex-1 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="bg-primary h-full w-[85%]"></div>
+                                </div>
+                                <span class="text-sm text-slate-500 w-12 text-right">85%</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="text-sm w-12">4 Star</span>
+                                <div class="flex-1 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="bg-primary h-full w-[10%]"></div>
+                                </div>
+                                <span class="text-sm text-slate-500 w-12 text-right">10%</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="text-sm w-12">3 Star</span>
+                                <div class="flex-1 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="bg-primary h-full w-[3%]"></div>
+                                </div>
+                                <span class="text-sm text-slate-500 w-12 text-right">3%</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="text-sm w-12">2 Star</span>
+                                <div class="flex-1 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="bg-primary h-full w-[1%]"></div>
+                                </div>
+                                <span class="text-sm text-slate-500 w-12 text-right">1%</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="text-sm w-12">1 Star</span>
+                                <div class="flex-1 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="bg-primary h-full w-[1%]"></div>
+                                </div>
+                                <span class="text-sm text-slate-500 w-12 text-right">1%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Individual Reviews -->
+                    <div class="space-y-8">
+                        <div class="border-t border-slate-50 dark:border-slate-800 pt-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <div class="flex items-center gap-2">
+                                    <div class="flex text-primary">
+                                        <span class="material-symbols-outlined text-sm fill-1">star</span>
+                                        <span class="material-symbols-outlined text-sm fill-1">star</span>
+                                        <span class="material-symbols-outlined text-sm fill-1">star</span>
+                                        <span class="material-symbols-outlined text-sm fill-1">star</span>
+                                        <span class="material-symbols-outlined text-sm fill-1">star</span>
+                                    </div>
+                                    <span class="text-sm font-bold">John D.</span>
+                                    <span class="material-symbols-outlined text-blue-500 text-sm">verified</span>
+                                    <span class="text-xs text-blue-500">Verified Purchase</span>
+                                </div>
+                                <span class="text-xs text-slate-400">2 weeks ago</span>
+                            </div>
+                            <p class="text-sm text-slate-700 dark:text-slate-300">Absolutely stunning phone. The camera
+                                quality is on another level, especially the night mode. The screen is so bright even
+                                under direct sunlight. Highly recommended!</p>
+                            <div class="flex gap-2 mt-3">
+                                <div class="w-16 h-16 rounded bg-slate-100"
+                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhV6IHlKBFfoXuV6_5fcZTUC-ZRecH6zKuM6K4KSP28KXN26PQp6i3DROJZXbRROMR7pDLLQq0mBqh_BgttJZs_xNIGrQ-O6xlEIEFVPxM0tT6S6_YGYQCQSB56eSr2AyTGiTTxf-zlWxZQ5udVCgYp7nDq5x5Nmndulx4YGSYmij3OHZueUYbKx6744m76HD1yxxdMuzT550QQwQ8Pu64xcmU3r6rWwt0yOFa5HCCSOBGGwi8ZImFvbE69AoXhmyGDK_f67k4VxM')">
+                                </div>
+                                <div class="w-16 h-16 rounded bg-slate-100"
+                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCvtNPMCvcBS8JruX2JkZo-7YgCDUwWYhA34dp0buphKv7YfrxF5crLacUZ-J4pRK7ZENVEN4StrpmrX_QsTKFJJbRkIw-Zd8TDJUOTM2PuFFKyKUNnaj1zQEWItkXpT9qT3tjeSh14V9hawHkhoCSGZYtkJv-Kd6pH2U8fJc1ntossCiDpaaQnkAOY3zz-4vRr3mzxBZQKApgx2WZwZmbUSbI2F-gWASqK547IhYKyt29uLSLmxrUBURyPtaGP37E-6fnYe9bualA')">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-t border-slate-50 dark:border-slate-800 pt-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <div class="flex items-center gap-2">
+                                    <div class="flex text-primary">
+                                        <span class="material-symbols-outlined text-sm fill-1">star</span>
+                                        <span class="material-symbols-outlined text-sm fill-1">star</span>
+                                        <span class="material-symbols-outlined text-sm fill-1">star</span>
+                                        <span class="material-symbols-outlined text-sm fill-1">star</span>
+                                        <span class="material-symbols-outlined text-sm">star</span>
+                                    </div>
+                                    <span class="text-sm font-bold">Sarah W.</span>
+                                    <span class="material-symbols-outlined text-blue-500 text-sm">verified</span>
+                                    <span class="text-xs text-blue-500">Verified Purchase</span>
+                                </div>
+                                <span class="text-xs text-slate-400">1 month ago</span>
+                            </div>
+                            <p class="text-sm text-slate-700 dark:text-slate-300">Fast delivery and authentic product.
+                                The battery life is great, easily lasts a full day of heavy usage. Only minor complaint
+                                is the size, it's quite big for small hands.</p>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full mt-8 py-3 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">View
+                        All Reviews</button>
+                </section>
+                <!-- Q&A Section -->
+                <section class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-sm mb-12" id="qna">
+                    <div
+                        class="flex justify-between items-center mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+                        <h2 class="text-xl font-bold">Questions &amp; Answers</h2>
+                        <button class="text-sm font-bold text-blue-500">Ask a Question</button>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex flex-col gap-3">
+                            <div class="flex gap-3">
+                                <span
+                                    class="bg-slate-100 dark:bg-slate-800 text-[10px] font-bold px-1.5 py-0.5 rounded h-min mt-1">Q</span>
+                                <p class="text-sm font-medium">Does this phone support expandable storage via SD card?
+                                </p>
+                            </div>
+                            <div class="flex gap-3 pl-4">
+                                <span
+                                    class="bg-primary/10 text-primary text-[10px] font-bold px-1.5 py-0.5 rounded h-min mt-1">A</span>
+                                <div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">No, this model does not have
+                                        an SD card slot. However, it comes with 256GB of fast internal storage.</p>
+                                    <p class="text-xs text-slate-400 mt-1">Store Official Store - 5 days ago</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 pt-6 border-t border-slate-50 dark:border-slate-800">
+                            <div class="flex gap-3">
+                                <span
+                                    class="bg-slate-100 dark:bg-slate-800 text-[10px] font-bold px-1.5 py-0.5 rounded h-min mt-1">Q</span>
+                                <p class="text-sm font-medium">Is the global version compatible with all network bands?
+                                </p>
+                            </div>
+                            <div class="flex gap-3 pl-4">
+                                <span
+                                    class="bg-primary/10 text-primary text-[10px] font-bold px-1.5 py-0.5 rounded h-min mt-1">A</span>
+                                <div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Yes, the global version
+                                        supports all major 4G and 5G bands internationally.</p>
+                                    <p class="text-xs text-slate-400 mt-1">Store Official Store - 1 week ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Side Suggestions -->
+            <div class="lg:col-span-3 flex flex-col gap-6">
+                <h3 class="font-bold text-slate-900 dark:text-slate-100">People Also Bought</h3>
+                <div class="grid grid-cols-1 gap-4">
+                    <div
+                        class="bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-800 group cursor-pointer">
+                        <div class="aspect-square rounded bg-slate-100 bg-center bg-no-repeat bg-cover mb-3"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_LvBC8oDFHAVFRahbCePLI1XCaVxd-_8kM_IkpwncjceFwFsCXwaNqCdkwtGnFEE3MtwfIjNJGj9wHYyXqQ_8yLdJuitgK_C5K5sBPY5h6CLmx8rC2nX_TxpdHQUt-w-JPiflYohCfwS3GfDcUtANxJMPED7Zs8ZgLvyMikBVao-FXJg9qGw9nILHpR9na_cfTz0prflyVX7OHxgxtraZ3p6Tkit9TnutK8ElF6yJBrpZzIFro3bOnV6ZIlu3CrC7vbqOrNJqbXg')">
+                        </div>
+                        <p class="text-xs text-slate-500 mb-1">Accessories</p>
+                        <h4 class="text-sm font-medium group-hover:text-primary transition-colors line-clamp-2">
+                            UltraShield Silicon Case for Pro Max</h4>
+                        <p class="text-primary font-bold mt-2">$25.00</p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-800 group cursor-pointer">
+                        <div class="aspect-square rounded bg-slate-100 bg-center bg-no-repeat bg-cover mb-3"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD6AMsXHbVyJ_YiZP0bCb9gg5m7m44SPc019MJziUVw3ro3tEiWmeJfO0ZCw8tujC2i7IlFBtNVMe13ygnidraRoTm1Csf2fEXHv-CD3FN15btEWuonSBSyfLxrg21_JHdUv5REp8Ecb6tYvfQ3XZTyx3RfMYPgrSxznkJE15ze27q8-PirUwdHlWJ4GxjmCVpiPkFsyEDTilDO2IBNFmisaxKqAX7Ctp9CMMAL5odyCVnecafFJ7clu4TXGZCzHfBVC__6y6eyOX0')">
+                        </div>
+                        <p class="text-xs text-slate-500 mb-1">Audio</p>
+                        <h4 class="text-sm font-medium group-hover:text-primary transition-colors line-clamp-2">
+                            SonicBuds Z2 Wireless with ANC</h4>
+                        <p class="text-primary font-bold mt-2">$149.00</p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-800 group cursor-pointer">
+                        <div class="aspect-square rounded bg-slate-100 bg-center bg-no-repeat bg-cover mb-3"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAODTpY5A8-lwQ-KAHR2ER1CGF9bbbbtNnUn3wCLT8mkjwLqn9BKGnWT_lclUENZR8yzQTd8D6WiyvrHgBcQ5s0hGgiU-dcRlstuIcv36-YVeBVl1zOfteV5aaerSi6Dp-0EHLvhbMV8e73yhmgUCckxr6G8YslLBIcdudIxAuxws-JGu-7gO1ZA1oH6PNVIHkDGJU14sCEh1pO8M3QUL83WwtRoqA6K_8FLDQJcQNjSR8Cl6_b1GYyE1niSxgiaFZ8f8CLLYaY3lY')">
+                        </div>
+                        <p class="text-xs text-slate-500 mb-1">Power</p>
+                        <h4 class="text-sm font-medium group-hover:text-primary transition-colors line-clamp-2">65W GaN
+                            Super Fast Charger</h4>
+                        <p class="text-primary font-bold mt-2">$45.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-20 py-12 px-4 md:px-40">
+        <div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2 text-primary">
+                    <span class="material-symbols-outlined text-2xl">shopping_bag</span>
+                    <h2 class="text-xl font-bold">MarketHub</h2>
+                </div>
+                <p class="text-sm text-slate-500">The most trusted marketplace for all your electronic needs. Reliable,
+                    fast, and secure.</p>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h4 class="font-bold">Customer Service</h4>
+                <ul class="text-sm text-slate-500 space-y-2">
+                    <li><a class="hover:text-primary" href="#">Help Center</a></li>
+                    <li><a class="hover:text-primary" href="#">How to Buy</a></li>
+                    <li><a class="hover:text-primary" href="#">Returns &amp; Refunds</a></li>
+                    <li><a class="hover:text-primary" href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h4 class="font-bold">MarketHub</h4>
+                <ul class="text-sm text-slate-500 space-y-2">
+                    <li><a class="hover:text-primary" href="#">About Us</a></li>
+                    <li><a class="hover:text-primary" href="#">Careers</a></li>
+                    <li><a class="hover:text-primary" href="#">Terms &amp; Conditions</a></li>
+                    <li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h4 class="font-bold">Payment Methods</h4>
+                <div class="flex flex-wrap gap-4 opacity-50 grayscale">
+                    <span class="material-symbols-outlined text-4xl">credit_card</span>
+                    <span class="material-symbols-outlined text-4xl">account_balance_wallet</span>
+                    <span class="material-symbols-outlined text-4xl">currency_bitcoin</span>
+                </div>
+                <h4 class="font-bold mt-4">Download Our App</h4>
+                <div class="flex gap-2">
+                    <div
+                        class="w-32 h-10 bg-slate-800 rounded flex items-center justify-center text-white text-[10px] gap-2">
+                        <span class="material-symbols-outlined text-lg">shop</span>
+                        <div class="flex flex-col leading-tight">
+                            <span>Get it on</span>
+                            <span class="font-bold text-xs uppercase">Google Play</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-[1280px] mx-auto mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 text-center text-sm text-slate-400">
+            © 2024 MarketHub. All Rights Reserved.
+        </div>
+    </footer>
+</body>
+
+</html>

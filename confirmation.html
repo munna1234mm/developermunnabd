@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec13",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102210",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <title>Order Confirmation - Daraz</title>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Top Navigation Bar -->
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-10 py-3 sticky top-0 z-50">
+                <div class="flex items-center gap-8">
+                    <div class="flex items-center gap-2 text-primary">
+                        <span class="material-symbols-outlined text-3xl">shopping_bag</span>
+                        <h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">Daraz
+                        </h2>
+                    </div>
+                    <label class="flex flex-col min-w-40 h-10 max-w-64">
+                        <div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden">
+                            <div
+                                class="text-slate-500 flex border-none bg-slate-100 dark:bg-slate-800 items-center justify-center pl-4">
+                                <span class="material-symbols-outlined text-xl">search</span>
+                            </div>
+                            <input
+                                class="form-input flex w-full min-w-0 flex-1 border-none bg-slate-100 dark:bg-slate-800 focus:ring-0 h-full placeholder:text-slate-500 px-4 text-base font-normal"
+                                placeholder="Search for products..." value="" />
+                        </div>
+                    </label>
+                </div>
+                <div class="flex flex-1 justify-end gap-8 items-center">
+                    <nav class="hidden md:flex items-center gap-6">
+                        <a class="text-slate-700 dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors"
+                            href="#">Home</a>
+                        <a class="text-slate-700 dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors"
+                            href="#">Flash Sale</a>
+                        <a class="text-slate-700 dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors"
+                            href="#">Help Center</a>
+                    </nav>
+                    <div class="flex gap-3">
+                        <button
+                            class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-primary/20">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                        </button>
+                        <button
+                            class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-primary/20">
+                            <span class="material-symbols-outlined">person</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <main class="flex-1 max-w-[1024px] mx-auto w-full px-6 py-12">
+                <!-- Success Header -->
+                <div class="flex flex-col items-center text-center mb-10">
+                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-primary text-5xl font-bold">check_circle</span>
+                    </div>
+                    <h1 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold leading-tight mb-2">Thank
+                        You for Your Purchase!</h1>
+                    <p class="text-slate-500 dark:text-slate-400 text-lg">Your order has been placed successfully and is
+                        being processed.</p>
+                    <div class="mt-4 inline-block bg-primary/10 border border-primary/20 rounded-full px-4 py-1">
+                        <span class="text-primary font-bold">Order ID: #123456789</span>
+                    </div>
+                </div>
+                <!-- Order Summary Card -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden mb-10">
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">list_alt</span>
+                            Order Details
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <!-- Delivery Info -->
+                            <div class="flex flex-col gap-2">
+                                <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Delivery
+                                    Estimate</p>
+                                <div class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-slate-400">local_shipping</span>
+                                    <p class="text-slate-900 dark:text-slate-100 font-medium">Oct 25 - Oct 28, 2023</p>
+                                </div>
+                            </div>
+                            <!-- Shipping Address -->
+                            <div class="flex flex-col gap-2">
+                                <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Shipping
+                                    Address</p>
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-slate-400">location_on</span>
+                                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                        123 Desktop Lane, Suite 404<br />
+                                        Dhaka, 1212, Bangladesh
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Payment Method -->
+                            <div class="flex flex-col gap-2">
+                                <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Payment Method
+                                </p>
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-pink-100 flex items-center justify-center overflow-hidden">
+                                        <div class="w-full h-full bg-cover bg-center"
+                                            data-alt="bKash mobile payment logo icon"
+                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCxXFpsJDgNhtJLCyFbchPCOAnlc9gNV0z0V2NJcS_yyT33o3BvitG0J8w-aGT6i1p9yc94xgH9D8IrYfvyWmvZIJGzTTqFfIHqbsxpS8cP4cZynVV02UqUrLVVMe80PkqJHVWrLaO83FeJZn59koZnACMT6umekeStXACvqbbbrbWw8VuGgLZB-Ble2LtIwvXaUrv33VWX3nEpQKoJhnO3o7mBeNynU8KxoDaaM-diHh7sOoiA1fHbEt7rg2W-s-qSBLtoTn72jc')">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="text-slate-900 dark:text-slate-100 font-medium">bKash Personal</p>
+                                        <p class="text-slate-400 text-xs">Paid: ৳ 4,500.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quick Actions -->
+                    <div
+                        class="bg-slate-50 dark:bg-slate-800/50 p-6 flex flex-col md:flex-row items-center justify-center gap-4">
+                        <button
+                            class="flex w-full md:w-auto min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-primary text-slate-900 text-base font-bold transition-all hover:opacity-90 active:scale-95 shadow-lg shadow-primary/20">
+                            <span class="material-symbols-outlined mr-2">track_changes</span>
+                            Track Order
+                        </button>
+                        <button
+                            class="flex w-full md:w-auto min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-8 border-2 border-slate-300 dark:border-slate-700 bg-transparent text-slate-700 dark:text-slate-200 text-base font-bold transition-all hover:bg-slate-100 dark:hover:bg-slate-800">
+                            Continue Shopping
+                        </button>
+                    </div>
+                </div>
+                <!-- Recommended Section -->
+                <section class="mt-16">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Recommended for You</h2>
+                        <a class="text-primary font-semibold text-sm hover:underline" href="#">View All</a>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                        <!-- Product Card 1 -->
+                        <div
+                            class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden transition-all hover:shadow-md">
+                            <div class="aspect-square bg-slate-100 overflow-hidden relative">
+                                <div class="w-full h-full bg-cover bg-center transition-transform group-hover:scale-105"
+                                    data-alt="Wireless noise cancelling headphones black"
+                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC4zbPwYFLtcRIZRA-QlxePUR_5zXGzZlN-ZO_8OfqpfydXBMXpN0rXISRM0UqBN616UIalIfwNSEfwV4ca820C_OmOUVcUlJBhLZO9hRl13OcUk_E2BP-r4VJKIsFW6TzNinxXMKN3YT2_xuxE7RWMoX4k6zC99fN9jc90oc1Xjl3a1HRIEVxqfspvuJnpBUEOS-QFM_DYFYm4sXfDZiOvC0-_MEN04rJhK8W2E8TUWOEfGh_GSkVMNI-mGt7hnqruYCJjCpS4do4')">
+                                </div>
+                                <button
+                                    class="absolute top-2 right-2 p-1.5 bg-white/80 dark:bg-slate-800/80 rounded-full text-slate-600 dark:text-slate-300 backdrop-blur-sm">
+                                    <span class="material-symbols-outlined text-xl">favorite</span>
+                                </button>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="text-sm font-medium text-slate-700 dark:text-slate-200 truncate mb-1">
+                                    Wireless Noise Cancelling Headphones</h4>
+                                <div class="flex items-center gap-1 mb-2">
+                                    <span class="material-symbols-outlined text-yellow-400 text-sm fill-1">star</span>
+                                    <span class="text-xs text-slate-400 font-medium">4.8 (1.2k)</span>
+                                </div>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-primary font-bold text-lg">৳ 3,200</span>
+                                    <span class="text-slate-400 text-xs line-through">৳ 4,500</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product Card 2 -->
+                        <div
+                            class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden transition-all hover:shadow-md">
+                            <div class="aspect-square bg-slate-100 overflow-hidden relative">
+                                <div class="w-full h-full bg-cover bg-center transition-transform group-hover:scale-105"
+                                    data-alt="Mechanical gaming keyboard RGB"
+                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgJhnMUpx_YKoz4l_n4MfwRBGzTvwvHUkvPsUEZv7Imyt_FbU7AXvP4Ht7HPndIhhPQPaqpfS5jTLWrYEDMY9moINUoWjB6ZBUpQAWi_qJdj026MpEgpRNNej0qH9TnLCPUTST-aM3FPD-kqzSnEdoOIaqlqFQNmENWMYro318XW0ylEZex3mTwN9BMlrWgkwX03dppUvmBTzbQlzn3AtKQcPS-YZoZCOL2lD31NlZeGfq3C-x6S4qx0my4OtL0_00-xXTJDGqXLo')">
+                                </div>
+                                <button
+                                    class="absolute top-2 right-2 p-1.5 bg-white/80 dark:bg-slate-800/80 rounded-full text-slate-600 dark:text-slate-300 backdrop-blur-sm">
+                                    <span class="material-symbols-outlined text-xl">favorite</span>
+                                </button>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="text-sm font-medium text-slate-700 dark:text-slate-200 truncate mb-1">
+                                    Mechanical RGB Keyboard</h4>
+                                <div class="flex items-center gap-1 mb-2">
+                                    <span class="material-symbols-outlined text-yellow-400 text-sm fill-1">star</span>
+                                    <span class="text-xs text-slate-400 font-medium">4.9 (850)</span>
+                                </div>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-primary font-bold text-lg">৳ 2,450</span>
+                                    <span class="text-slate-400 text-xs line-through">৳ 3,100</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product Card 3 -->
+                        <div
+                            class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden transition-all hover:shadow-md">
+                            <div class="aspect-square bg-slate-100 overflow-hidden relative">
+                                <div class="w-full h-full bg-cover bg-center transition-transform group-hover:scale-105"
+                                    data-alt="Smart watch with health tracking silver"
+                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDnpF4DTnRvMs25DMbQXFklF-MzcNwkCfsMvSrO6FetWZJflnlVo_DB8Rekzkrkiq2AC3COySY7zETuVpav42ub8IMgRSgWmQ8LRcdskJBU0x7P8UUp0djCOCHkEIOHNd45jSBw1zHU0bZSb6Sbw85CdzbuBLZ3ImKSy3iuuJ5zeEH7XWKcHOmCmxgpivZ5MMg2wVjLlKWAfx0O07_tW3yTQcG8PD6FN3I_wBDS4lpbYLnL0jhyge7c_yT0f4MzfOURLo0SLtiml9g')">
+                                </div>
+                                <button
+                                    class="absolute top-2 right-2 p-1.5 bg-white/80 dark:bg-slate-800/80 rounded-full text-slate-600 dark:text-slate-300 backdrop-blur-sm">
+                                    <span class="material-symbols-outlined text-xl">favorite</span>
+                                </button>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="text-sm font-medium text-slate-700 dark:text-slate-200 truncate mb-1">Smart
+                                    Health Fitness Watch</h4>
+                                <div class="flex items-center gap-1 mb-2">
+                                    <span class="material-symbols-outlined text-yellow-400 text-sm fill-1">star</span>
+                                    <span class="text-xs text-slate-400 font-medium">4.7 (2.4k)</span>
+                                </div>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-primary font-bold text-lg">৳ 1,800</span>
+                                    <span class="text-slate-400 text-xs line-through">৳ 2,500</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product Card 4 -->
+                        <div
+                            class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden transition-all hover:shadow-md">
+                            <div class="aspect-square bg-slate-100 overflow-hidden relative">
+                                <div class="w-full h-full bg-cover bg-center transition-transform group-hover:scale-105"
+                                    data-alt="Portable mini bluetooth speaker waterproof"
+                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXg4J6pbD-3TbwUSAXYUpwNaUqPzyV_ZR4Oyo6tve9DhCFp35o5HpKjFtjv6mDA2QOtcmFvqpYZh7arMBjP1JXPcYbgb32RTbEY1ptX2pfo_ndWx3ER-cVqYhZP8PvlFpJtsP5IM1BPRug5gYslMsLSuF1UNav6aE_HrexBjX_l6beFB3LhFmlYh_LpJ6W0nOdNpQQ5gcFYZBa4oDyqnGEw45ZGAdRpvkyvXKm9p4ghIAfDcjcw84vLtjfVEdwFwhZLhqEce4QexE')">
+                                </div>
+                                <button
+                                    class="absolute top-2 right-2 p-1.5 bg-white/80 dark:bg-slate-800/80 rounded-full text-slate-600 dark:text-slate-300 backdrop-blur-sm">
+                                    <span class="material-symbols-outlined text-xl">favorite</span>
+                                </button>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="text-sm font-medium text-slate-700 dark:text-slate-200 truncate mb-1">
+                                    Waterproof Mini Speaker</h4>
+                                <div class="flex items-center gap-1 mb-2">
+                                    <span class="material-symbols-outlined text-yellow-400 text-sm fill-1">star</span>
+                                    <span class="text-xs text-slate-400 font-medium">4.6 (540)</span>
+                                </div>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-primary font-bold text-lg">৳ 950</span>
+                                    <span class="text-slate-400 text-xs line-through">৳ 1,200</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <!-- Footer Small -->
+            <footer
+                class="mt-auto py-8 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6">
+                <div class="max-w-[1024px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-slate-500 text-sm">© 2023 Daraz E-commerce. All rights reserved.</p>
+                    <div class="flex gap-6">
+                        <a class="text-slate-500 hover:text-primary text-sm" href="#">Terms &amp; Conditions</a>
+                        <a class="text-slate-500 hover:text-primary text-sm" href="#">Privacy Policy</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

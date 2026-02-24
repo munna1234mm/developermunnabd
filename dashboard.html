@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>User Account Dashboard - Daraz Style</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo & Search -->
+                <div class="flex items-center gap-8 flex-1">
+                    <div class="flex items-center gap-2 text-primary">
+                        <span class="material-symbols-outlined text-3xl font-bold">shopping_bag</span>
+                        <h1 class="text-2xl font-black tracking-tight text-slate-900 dark:text-white">Daraz</h1>
+                    </div>
+                    <div class="hidden md:flex flex-1 max-w-md">
+                        <label class="relative w-full">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+                                <span class="material-symbols-outlined">search</span>
+                            </span>
+                            <input
+                                class="block w-full pl-10 pr-3 py-2 border-none bg-slate-100 dark:bg-slate-800 rounded-lg focus:ring-2 focus:ring-primary text-sm"
+                                placeholder="Search in Daraz" type="text" />
+                        </label>
+                    </div>
+                </div>
+                <!-- Right Nav Links -->
+                <nav class="flex items-center gap-6">
+                    <div
+                        class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+                        <a class="hover:text-primary" href="#">Home</a>
+                        <a class="hover:text-primary" href="#">Help Center</a>
+                        <a class="hover:text-primary" href="#">Sell on Daraz</a>
+                    </div>
+                    <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
+                    <button
+                        class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-colors">
+                        Sign Out
+                    </button>
+                    <div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border-2 border-primary/20">
+                        <img class="w-full h-full object-cover" data-alt="User profile avatar of John Doe"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPriRe-4RvPwEecE0mFhqX9yGLeAiKVx4PTngPW5nGz0zCzxLmlCQCL7lZxaUhkXaurN5JGDXoWHz0oWyS6BW60qif8lNbBHMNiY1d7XLbs9OEKGfaewL9jK7HhSGB-FTzd2KL3nJrxqShLcJzOCVMs1QQG8Z8uH66CKDDEJFLZrbyHILUox7HTuH1U2r66kYPCQCUXvbHZFGIUPuBED83ZxK34wgLYNiYVo_OpoCF3f2xiw30g9kns_wPk8__62ulk8BbQwTk0mM" />
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Left Sidebar Navigation -->
+            <aside class="w-full lg:w-64 flex-shrink-0">
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-4 sticky top-24">
+                    <div class="flex items-center gap-3 mb-6 px-2">
+                        <div class="bg-primary/10 p-2 rounded-lg text-primary">
+                            <span class="material-symbols-outlined">account_circle</span>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 font-medium uppercase tracking-wider">Hello,</p>
+                            <p class="font-bold text-slate-900 dark:text-white">John Doe</p>
+                        </div>
+                    </div>
+                    <nav class="space-y-1">
+                        <a class="flex items-center gap-3 px-3 py-2.5 bg-primary text-white rounded-lg font-medium transition-all"
+                            href="#">
+                            <span class="material-symbols-outlined">person</span>
+                            <span>My Profile</span>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                            href="#">
+                            <span
+                                class="material-symbols-outlined text-slate-400 group-hover:text-primary">location_on</span>
+                            <span>Address Book</span>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                            href="#">
+                            <span
+                                class="material-symbols-outlined text-slate-400 group-hover:text-primary">credit_card</span>
+                            <span>Payment Options</span>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                            href="#">
+                            <span
+                                class="material-symbols-outlined text-slate-400 group-hover:text-primary">confirmation_number</span>
+                            <span>Vouchers</span>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                            href="#">
+                            <span
+                                class="material-symbols-outlined text-slate-400 group-hover:text-primary">favorite</span>
+                            <span>My Wishlist</span>
+                        </a>
+                        <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800">
+                            <a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                                href="#">
+                                <span
+                                    class="material-symbols-outlined text-slate-400 group-hover:text-primary">reviews</span>
+                                <span>My Reviews</span>
+                            </a>
+                            <a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                                href="#">
+                                <span
+                                    class="material-symbols-outlined text-slate-400 group-hover:text-primary">settings</span>
+                                <span>Settings</span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </aside>
+            <!-- Main Content Area -->
+            <div class="flex-1 space-y-6">
+                <!-- Profile Header -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="flex items-center gap-6">
+                        <div class="relative">
+                            <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary/10">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="John Doe high resolution profile photo"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-8vflkhpb5RQP-4V6zvJo2pgswgFNaT8Aq11RBZ3Md_yV-MI9UfLFaDWPkMFqAufRBMsp75cg2TLm640PyEiIZc8fjhvfRiGm66Xemt7AYBjN9t2rBMZLhs80PbVQqLVTRGsHzCla6lK5L2-45LBAQ6Ed27rXGEenXMItqe1raxUgeEC93DLW9lGmJP2IkVtPZVb1r_JeQ2rLhlWeWuCLEjPwahzwCQ9VJ8Qmtsp45K6kMWirMp_cGfeggsZ60isTsrh58pmwiqs" />
+                            </div>
+                            <button
+                                class="absolute bottom-0 right-0 bg-primary text-white p-1.5 rounded-full border-2 border-white dark:border-slate-900 shadow-lg">
+                                <span class="material-symbols-outlined text-sm">edit</span>
+                            </button>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">John Doe</h2>
+                            <p class="text-slate-500 text-sm mb-2">Member since October 2021</p>
+                            <span
+                                class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                <span class="material-symbols-outlined text-sm mr-1">workspace_premium</span>
+                                SILVER MEMBER
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 w-full md:w-auto">
+                        <div class="flex-1 md:flex-none text-center px-6 py-3 bg-slate-50 dark:bg-slate-800 rounded-xl">
+                            <p class="text-2xl font-black text-primary">12</p>
+                            <p class="text-xs text-slate-500 font-bold uppercase tracking-tighter">Orders</p>
+                        </div>
+                        <div class="flex-1 md:flex-none text-center px-6 py-3 bg-slate-50 dark:bg-slate-800 rounded-xl">
+                            <p class="text-2xl font-black text-primary">450</p>
+                            <p class="text-xs text-slate-500 font-bold uppercase tracking-tighter">Points</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Orders Status Section -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+                    <div
+                        class="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                        <h3 class="font-bold text-lg">My Orders</h3>
+                        <a class="text-primary text-sm font-semibold hover:underline" href="#">View All</a>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-100 dark:divide-slate-800">
+                        <div
+                            class="flex flex-col items-center justify-center p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors relative group">
+                            <div
+                                class="bg-primary/10 text-primary p-3 rounded-full mb-3 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined">account_balance_wallet</span>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700 dark:text-slate-300">To Pay</span>
+                            <span
+                                class="absolute top-4 right-1/4 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white dark:border-slate-900">2</span>
+                        </div>
+                        <div
+                            class="flex flex-col items-center justify-center p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors relative group">
+                            <div
+                                class="bg-primary/10 text-primary p-3 rounded-full mb-3 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined">local_shipping</span>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700 dark:text-slate-300">To Ship</span>
+                        </div>
+                        <div
+                            class="flex flex-col items-center justify-center p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors relative group">
+                            <div
+                                class="bg-primary/10 text-primary p-3 rounded-full mb-3 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined">inventory_2</span>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700 dark:text-slate-300">To Receive</span>
+                            <span
+                                class="absolute top-4 right-1/4 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white dark:border-slate-900">1</span>
+                        </div>
+                        <div
+                            class="flex flex-col items-center justify-center p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors relative group">
+                            <div
+                                class="bg-primary/10 text-primary p-3 rounded-full mb-3 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined">rate_review</span>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700 dark:text-slate-300">To Review</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent Orders Table -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+                    <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+                        <h3 class="font-bold text-lg">Recent Orders</h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead
+                                class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 text-xs font-bold uppercase tracking-wider">
+                                <tr>
+                                    <th class="px-6 py-4">Order ID</th>
+                                    <th class="px-6 py-4">Date</th>
+                                    <th class="px-6 py-4">Status</th>
+                                    <th class="px-6 py-4">Total</th>
+                                    <th class="px-6 py-4 text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="font-mono text-sm text-slate-900 dark:text-white font-medium">#DRZ-928347</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Oct 24, 2023</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400">
+                                            Delivered
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm font-bold text-slate-900 dark:text-white">$124.00</td>
+                                    <td class="px-6 py-4 text-right">
+                                        <button
+                                            class="text-primary font-semibold text-sm hover:underline">Manage</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="font-mono text-sm text-slate-900 dark:text-white font-medium">#DRZ-881293</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Oct 22, 2023</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400">
+                                            Processing
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm font-bold text-slate-900 dark:text-white">$45.50</td>
+                                    <td class="px-6 py-4 text-right">
+                                        <button
+                                            class="text-primary font-semibold text-sm hover:underline">Manage</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="font-mono text-sm text-slate-900 dark:text-white font-medium">#DRZ-772109</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Oct 18, 2023</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400">
+                                            Shipped
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm font-bold text-slate-900 dark:text-white">$210.00</td>
+                                    <td class="px-6 py-4 text-right">
+                                        <button
+                                            class="text-primary font-semibold text-sm hover:underline">Manage</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div
+                        class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 text-center">
+                        <button
+                            class="text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+                            View all transaction history
+                        </button>
+                    </div>
+                </div>
+                <!-- Secondary Info Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Wishlist Preview -->
+                    <div
+                        class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-lg">My Wishlist</h3>
+                            <a class="text-primary text-sm font-semibold" href="#">View All</a>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex gap-4 items-center">
+                                <div
+                                    class="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Product image of a minimalist white watch"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvT6mRXh3515sM7eKo_sqDZ1J-ahCT25HL0--S5tORjJqwL45W0M3V2VEjH7qXaDqfffbmQ9Nxxbj-LjHajBgaSUSORQA9PYw3kN3FVE3jxgbS3xr--5MjpAs_kbNo_-zJgPUzhPsj_06zRlZqx2XZS5PWE7mIgC4AtiIGU8YxXCH14QGXtT580CQB4lXiVkZlAvb7RxYtDfIYr2E2-LPP7IoOWB4a77HDJOU9cQynqOuIZ9-kKKv1GcgCtpgmS5Hf1acZeOlBX90" />
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-slate-900 dark:text-white truncate">Minimalist
+                                        Smart Watch V2</p>
+                                    <p class="text-primary font-bold">$199.00</p>
+                                </div>
+                                <button class="p-2 text-slate-400 hover:text-red-500 transition-colors">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                            <div class="flex gap-4 items-center">
+                                <div
+                                    class="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Product image of high-end wireless headphones"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLDW5Mz69bEAR1Jf32W5K_DyEVQW6ZPZSKsitwULLo9sQlxe7IKLCxQm5Pexk8LHcUp1td6X02cgBUe2T6op55O56VSCszQGvt56REq2MkdgEUvMhyyVzgCQRmi-DsFSH8NRpn6eAl1KrgdmFVJi8QBbWM9qn6pBPcmUs946-JClVXLlwae5NstzL5PmBtKGHhEJ9IZFzZuzJgLCWfx1fMEh4HOrNToIqwwswsvOk3mXNncG59qs6JnjbvkCh1P-kzu3Seg7uvZK4" />
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-slate-900 dark:text-white truncate">Premium Noise
+                                        Cancelling Headphones</p>
+                                    <p class="text-primary font-bold">$349.00</p>
+                                </div>
+                                <button class="p-2 text-slate-400 hover:text-red-500 transition-colors">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Voucher Card -->
+                    <div
+                        class="bg-primary/5 dark:bg-primary/10 rounded-xl border-2 border-dashed border-primary/20 p-6 flex flex-col justify-center items-center text-center">
+                        <div
+                            class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mb-4 shadow-lg shadow-primary/20">
+                            <span class="material-symbols-outlined text-3xl">confirmation_number</span>
+                        </div>
+                        <h3 class="font-bold text-lg mb-1">Active Vouchers</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">You have 3 vouchers available for
+                            your next purchase!</p>
+                        <button
+                            class="bg-white dark:bg-slate-800 text-primary border border-primary font-bold px-6 py-2 rounded-lg text-sm hover:bg-primary hover:text-white transition-all">
+                            Claim Rewards
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase mb-4 tracking-widest">Customer
+                        Care</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a class="hover:text-primary" href="#">Help Center</a></li>
+                        <li><a class="hover:text-primary" href="#">How to Buy</a></li>
+                        <li><a class="hover:text-primary" href="#">Returns &amp; Refunds</a></li>
+                        <li><a class="hover:text-primary" href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase mb-4 tracking-widest">Daraz
+                    </h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a class="hover:text-primary" href="#">About Daraz</a></li>
+                        <li><a class="hover:text-primary" href="#">Careers</a></li>
+                        <li><a class="hover:text-primary" href="#">Daraz Blog</a></li>
+                        <li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase mb-4 tracking-widest">Sell on
+                        Daraz</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a class="hover:text-primary" href="#">Seller Center</a></li>
+                        <li><a class="hover:text-primary" href="#">Sell on Daraz</a></li>
+                        <li><a class="hover:text-primary" href="#">Affiliate Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase mb-4 tracking-widest">Follow
+                        Us</h4>
+                    <div class="flex gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:text-primary cursor-pointer">
+                            <span class="material-symbols-outlined">public</span>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:text-primary cursor-pointer">
+                            <span class="material-symbols-outlined">share</span>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:text-primary cursor-pointer">
+                            <span class="material-symbols-outlined">forum</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-slate-400">© 2023 Daraz Marketplace. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <img class="h-6 grayscale opacity-50" data-alt="Payment gateway icon: Visa"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt4f9jCS-L1w5zWmDLceTTz-LAKiLr50y3deW5hEyl_yT5oGL8iLuRjbZN5NDEApmE_RkptCa-esOQ0vsnBM-56I7rKTQiTvrCQNtfeM-NPfopS2v0nIjQXG6lfcO41GZ7t-eFeik7iJxhc2V9jfU015mRDvl42MfBUfnvC2H0XstDgGrYepy6dJCbElZ7r0Z37FHMt0fWOmJt41qFgg3ru4cEX9v6TGs1QN7w3_hyimtVUaU_fdmNbntAThROKQpvn4V8ns_tC6I" />
+                    <img class="h-6 grayscale opacity-50" data-alt="Payment gateway icon: Mastercard"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfXHidlvIT7lGUSN5f258FC3Rm9oX38mATU1ojyEwKHTBdjEcVAAemVpwvnu8kMbztCZufTNL6VPexRy6B3DQ0nIUsmOz4QN7dofsFJqYNydWNC-k_wy64RntKn_sj_VeY0H0S1dqjTmtq78I9XaV3l4SDohtL2_ddmgjp-UTUlW-GqLBGXxl3KGIOsFi3BSnV07zVbxPDvwBIoRa6ipSP8keru7B7sc-qU6XTRZylimUuGF-VZZDNyEXthT9Zsn_Z3wLlaqz3X_Y" />
+                    <img class="h-6 grayscale opacity-50" data-alt="Payment gateway icon: PayPal"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCusWgPC2efWb8SKovfUeWd9DGl_fNkmqwgYEtL2CQBF6K_LUgqW-kuYx20j75ICPwVPloJin954d_QVpUbL2acTS1ih6yt0Uk9Jys79B5XCz4ntJFRFx0nI1OxXraEqR0tKTIK1zm0HGvIm7gEa3tNr9R6Y7Pf63gJAYhlckWqzWFRUKSRTnl5H_cyzxRifPbVEAihpiTG5ZN9jeAbNL7uypK70jv36hpSn0XCwvx-Hmy7C4TPMu1WAn_X14qHGhwLC2w2n3s7Kjk" />
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Product Search Results | Daraz</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f47b25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221710",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+    <!-- Top Navigation Bar -->
+    <header
+        class="sticky top-0 z-50 w-full bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between gap-8">
+            <!-- Logo & Search -->
+            <div class="flex items-center gap-8 flex-1">
+                <div class="flex items-center gap-2 text-primary">
+                    <span class="material-symbols-outlined text-3xl font-bold">shopping_bag</span>
+                    <h1 class="text-2xl font-bold tracking-tight">Daraz</h1>
+                </div>
+                <div class="flex-1 max-w-2xl relative">
+                    <div
+                        class="flex w-full items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-4 py-2 border border-transparent focus-within:border-primary transition-colors">
+                        <span class="material-symbols-outlined text-slate-500 mr-2">search</span>
+                        <input class="bg-transparent border-none focus:ring-0 w-full text-sm"
+                            placeholder="Search in Daraz" type="text" value="Laptops" />
+                        <button
+                            class="bg-primary text-white px-4 py-1 rounded-md text-sm font-semibold hover:bg-opacity-90 transition-all">Search</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Nav Links & Actions -->
+            <div class="flex items-center gap-6">
+                <nav class="hidden xl:flex items-center gap-6 text-sm font-medium">
+                    <a class="hover:text-primary transition-colors" href="#">Flash Sale</a>
+                    <a class="hover:text-primary transition-colors" href="#">Global Collection</a>
+                    <a class="hover:text-primary transition-colors" href="#">Sell on Daraz</a>
+                    <a class="hover:text-primary transition-colors" href="#">Track Order</a>
+                </nav>
+                <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
+                <div class="flex items-center gap-4">
+                    <button class="text-sm font-bold hover:text-primary">Login</button>
+                    <button
+                        class="bg-slate-200 dark:bg-slate-800 text-sm font-bold px-4 py-2 rounded-lg hover:bg-slate-300 transition-colors">Sign
+                        Up</button>
+                    <div class="relative cursor-pointer">
+                        <span class="material-symbols-outlined text-2xl">shopping_cart</span>
+                        <span
+                            class="absolute -top-2 -right-2 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-[1440px] mx-auto px-6 py-6">
+        <!-- Breadcrumbs -->
+        <div class="flex items-center gap-2 text-xs text-slate-500 mb-6">
+            <a class="hover:text-primary" href="#">Home</a>
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+            <a class="hover:text-primary" href="#">Computing</a>
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+            <span class="text-slate-900 dark:text-slate-100 font-medium">Laptops</span>
+        </div>
+        <div class="flex gap-8">
+            <!-- Left Sidebar Filters -->
+            <aside class="w-64 shrink-0 flex flex-col gap-8">
+                <div>
+                    <h3 class="font-bold text-sm mb-4 uppercase tracking-wider text-slate-500">Categories</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center justify-between text-primary font-medium">
+                            <span>Laptops</span>
+                            <span class="text-xs text-slate-400">1,245</span>
+                        </li>
+                        <li class="flex items-center justify-between hover:text-primary cursor-pointer">
+                            <span>Gaming Laptops</span>
+                            <span class="text-xs text-slate-400">450</span>
+                        </li>
+                        <li class="flex items-center justify-between hover:text-primary cursor-pointer">
+                            <span>Ultrabooks</span>
+                            <span class="text-xs text-slate-400">210</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Price Range Filter -->
+                <div>
+                    <h3 class="font-bold text-sm mb-4 uppercase tracking-wider text-slate-500">Price Range</h3>
+                    <div class="flex gap-2 mb-4">
+                        <input
+                            class="w-full text-sm rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800"
+                            placeholder="Min" type="number" />
+                        <input
+                            class="w-full text-sm rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800"
+                            placeholder="Max" type="number" />
+                    </div>
+                    <button
+                        class="w-full bg-primary/10 text-primary py-2 rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-all">Apply
+                        Price</button>
+                </div>
+                <!-- Brand Filter -->
+                <div>
+                    <h3 class="font-bold text-sm mb-4 uppercase tracking-wider text-slate-500">Brand</h3>
+                    <div class="space-y-2 max-h-48 overflow-y-auto pr-2">
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4"
+                                type="checkbox" />
+                            <span class="text-sm group-hover:text-primary">Apple</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input checked="" class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4"
+                                type="checkbox" />
+                            <span class="text-sm group-hover:text-primary">Dell</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4"
+                                type="checkbox" />
+                            <span class="text-sm group-hover:text-primary">HP</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input checked="" class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4"
+                                type="checkbox" />
+                            <span class="text-sm group-hover:text-primary">Lenovo</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4"
+                                type="checkbox" />
+                            <span class="text-sm group-hover:text-primary">ASUS</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- Service Filter -->
+                <div>
+                    <h3 class="font-bold text-sm mb-4 uppercase tracking-wider text-slate-500">Service &amp; Promotion
+                    </h3>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4"
+                                type="checkbox" />
+                            <span class="text-sm group-hover:text-primary">Free Shipping</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4"
+                                type="checkbox" />
+                            <span class="text-sm group-hover:text-primary">Fulfilled by Daraz</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4"
+                                type="checkbox" />
+                            <span class="text-sm group-hover:text-primary">Cash On Delivery</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- Ratings Filter -->
+                <div>
+                    <h3 class="font-bold text-sm mb-4 uppercase tracking-wider text-slate-500">Rating</h3>
+                    <div class="space-y-2">
+                        <button
+                            class="flex items-center gap-1 text-primary hover:bg-slate-100 dark:hover:bg-slate-800 w-full p-1 rounded transition-colors">
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="text-xs text-slate-500 ml-1">&amp; Up</span>
+                        </button>
+                        <button
+                            class="flex items-center gap-1 text-primary hover:bg-slate-100 dark:hover:bg-slate-800 w-full p-1 rounded transition-colors">
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="text-xs text-slate-500 ml-1">&amp; Up</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Color Filter -->
+                <div>
+                    <h3 class="font-bold text-sm mb-4 uppercase tracking-wider text-slate-500">Color Family</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <div
+                            class="w-6 h-6 rounded-full bg-slate-900 border-2 border-white ring-1 ring-slate-300 cursor-pointer shadow-sm">
+                        </div>
+                        <div
+                            class="w-6 h-6 rounded-full bg-slate-400 border-2 border-white ring-1 ring-slate-300 cursor-pointer shadow-sm">
+                        </div>
+                        <div
+                            class="w-6 h-6 rounded-full bg-slate-100 border-2 border-white ring-1 ring-slate-300 cursor-pointer shadow-sm">
+                        </div>
+                        <div
+                            class="w-6 h-6 rounded-full bg-blue-900 border-2 border-white ring-1 ring-slate-300 cursor-pointer shadow-sm">
+                        </div>
+                        <div
+                            class="w-6 h-6 rounded-full bg-rose-200 border-2 border-white ring-1 ring-slate-300 cursor-pointer shadow-sm">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- Main Product Area -->
+            <section class="flex-1">
+                <!-- Toolbar -->
+                <div
+                    class="flex items-center justify-between mb-6 bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+                    <div class="flex items-center gap-2">
+                        <span class="text-slate-500 text-sm">1,245 items found for</span>
+                        <span class="text-primary font-bold">"Laptops"</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <label class="text-sm text-slate-500">Sort by:</label>
+                        <select
+                            class="text-sm border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 rounded-lg focus:ring-primary focus:border-primary px-4 py-1.5">
+                            <option>Relevance</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Newest Arrivals</option>
+                            <option>Best Rating</option>
+                        </select>
+                        <div
+                            class="flex items-center border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden">
+                            <button class="p-1.5 bg-slate-100 dark:bg-slate-700 text-primary">
+                                <span class="material-symbols-outlined">grid_view</span>
+                            </button>
+                            <button class="p-1.5 text-slate-400 hover:text-primary">
+                                <span class="material-symbols-outlined">view_list</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <!-- Product Card 1 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-shadow group cursor-pointer">
+                        <div class="relative aspect-square overflow-hidden bg-slate-100">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                data-alt="Modern silver laptop on a minimalist desk"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN_NlfDwO_YrZ-5MeVNuqrPPO_qMuDSvXM_ZLLBKb9RZyX9ti5jZ3O9KnK2O_UzJJBpOQ0UHE--GKSYTg7iaNa2QpOBNtVQ6E6ezfrWsAIMWCMUSCgzNkGAZHM1q8ivQ55rpewBiqSGxVVEQLDW3bqNVmFHi8485UH7YybTWSslFJQ3R38bG82aIr88N91b1E6RGANYOWxPiXEL-dbjWH4L2sPmVu8yOF2_pDiQt6kE-kk_4jf0ICdddymh26uYU07TPspINxDo8U" />
+                            <div
+                                class="absolute top-2 left-2 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded">
+                                20% OFF</div>
+                            <div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="p-2 bg-white rounded-full shadow-lg text-slate-900 hover:text-primary">
+                                    <span class="material-symbols-outlined">favorite</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-col gap-2">
+                            <h3 class="text-sm line-clamp-2 group-hover:text-primary transition-colors">MacBook Air M2
+                                Chip - 8GB RAM - 256GB SSD - 13.6-inch Display - Space Grey</h3>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-lg font-bold text-primary">$1,099.00</span>
+                                <span class="text-xs text-slate-400 line-through">$1,299.00</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <div class="flex text-yellow-400">
+                                    <span class="material-symbols-outlined text-sm fill-1">star</span>
+                                    <span class="material-symbols-outlined text-sm fill-1">star</span>
+                                    <span class="material-symbols-outlined text-sm fill-1">star</span>
+                                    <span class="material-symbols-outlined text-sm fill-1">star</span>
+                                    <span class="material-symbols-outlined text-sm fill-1">star_half</span>
+                                </div>
+                                <span class="text-[10px] text-slate-400">(128)</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-[10px] text-green-600 font-medium">
+                                <span class="material-symbols-outlined text-xs">local_shipping</span>
+                                Free Shipping
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Footer Area (Simple) -->
+    <footer class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 mt-20 py-10">
+        <div class="max-w-[1440px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2 text-primary">
+                    <span class="material-symbols-outlined text-2xl font-bold">shopping_bag</span>
+                    <h2 class="text-xl font-bold tracking-tight">Daraz</h2>
+                </div>
+                <p class="text-sm text-slate-500">The leading e-commerce marketplace in South Asia, connecting thousands
+                    of sellers with millions of customers.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm mb-4">Customer Care</h4>
+                <ul class="text-sm text-slate-500 space-y-2">
+                    <li><a class="hover:text-primary" href="#">Help Center</a></li>
+                    <li><a class="hover:text-primary" href="#">Returns &amp; Refunds</a></li>
+                    <li><a class="hover:text-primary" href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm mb-4">Daraz</h4>
+                <ul class="text-sm text-slate-500 space-y-2">
+                    <li><a class="hover:text-primary" href="#">About Us</a></li>
+                    <li><a class="hover:text-primary" href="#">Careers</a></li>
+                    <li><a class="hover:text-primary" href="#">Terms &amp; Conditions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm mb-4">Follow Us</h4>
+                <div class="flex gap-4">
+                    <span class="material-symbols-outlined cursor-pointer hover:text-primary">social_leaderboard</span>
+                    <span class="material-symbols-outlined cursor-pointer hover:text-primary">video_library</span>
+                    <span class="material-symbols-outlined cursor-pointer hover:text-primary">photo_camera</span>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-[1440px] mx-auto px-6 mt-10 pt-6 border-t border-slate-100 dark:border-slate-800 text-center text-xs text-slate-400">
+            © 2024 Daraz Marketplace. All Rights Reserved.
+        </div>
+    </footer>
+</body>
+
+</html>
